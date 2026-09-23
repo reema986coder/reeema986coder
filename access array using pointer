@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main()
+{
+    int arr[5] = {10, 20, 30, 40, 50};
+    int *ptr;
+    int position;
+
+    ptr = arr;
+
+    printf("Enter the position of the element (0-4): ");
+    scanf("%d", &position);
+
+    printf("Element at position %d = %d", position, *(ptr + position));
+
+    return 0;
+}
