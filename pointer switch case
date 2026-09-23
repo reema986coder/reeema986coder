@@ -1,0 +1,52 @@
+#include <stdio.h>
+
+int main()
+{
+    int a, b, result;
+    char op;
+    int *p1, *p2;
+
+    printf("Enter two numbers: ");
+    scanf("%d %d", &a, &b);
+
+    printf("Enter operator (+, -, *, /): ");
+    scanf(" %c", &op);
+
+    p1 = &a;
+    p2 = &b;
+
+    switch(op)
+    {
+        case '+':
+            result = *p1 + *p2;
+            printf("Addition = %d", result);
+            break;
+
+        case '-':
+            result = *p1 - *p2;
+            printf("Subtraction = %d", result);
+            break;
+
+        case '*':
+            result = *p1 * *p2;
+            printf("Multiplication = %d", result);
+            break;
+
+        case '/':
+            if(*p2 != 0)
+            {
+                result = *p1 / *p2;
+                printf("Division = %d", result);
+            }
+            else
+            {
+                printf("Division by zero is not possible.");
+            }
+            break;
+
+        default:
+            printf("Invalid operator.");
+    }
+
+    return 0;
+}
