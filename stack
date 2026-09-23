@@ -1,0 +1,97 @@
+#include <stdio.h>
+
+#define MAX 5
+
+int stack[MAX];
+int top = -1;
+
+int isFull()
+{
+    return top == MAX - 1;
+}
+
+int isEmpty()
+{
+    return top == -1;
+}
+
+void push(int value)
+{
+    if (isFull())
+    {
+        printf("Stack Overflow\n");
+    }
+    else
+    {
+        top++;
+        stack[top] = value;
+        printf("Pushed = %d\n", value);
+    }
+}
+
+int pop()
+{
+    int poppedValue;
+
+    if (isEmpty())
+    {
+        printf("Stack is Empty\n");
+        return -1;
+    }
+    else
+    {
+        poppedValue = stack[top];
+        top--;
+        return poppedValue;
+    }
+}
+
+int peek()
+{
+    if (isEmpty())
+    {
+        printf("Stack is Empty\n");
+        return -1;
+    }
+    else
+    {
+        return stack[top];
+    }
+}
+
+void display()
+{
+    int i;
+
+    if (isEmpty())
+    {
+        printf("Stack is Empty\n");
+        return;
+    }
+
+    printf("Stack Elements:\n");
+
+    for (i = top; i >= 0; i--)
+    {
+        printf("%d ", stack[i]);
+    }
+
+    printf("\n");
+}
+
+int main()
+{
+    push(10);
+    push(20);
+    push(30);
+
+    display();
+
+    printf("Popped element = %d\n", pop());
+
+    printf("Top element = %d\n", peek());
+
+    display();
+
+    return 0;
+}
