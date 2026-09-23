@@ -1,0 +1,150 @@
+#include <stdio.h>
+
+#define SIZE 5
+
+int item[SIZE];
+int front = -1;
+int rear = -1;
+
+void enqueue(int value);
+void dequeue();
+void display();
+
+int main()
+{
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+    enqueue(60);
+
+    display();
+
+    dequeue();
+    dequeue();
+
+    display();
+
+    return 0;
+}
+
+void enqueue(int value)
+{
+    if (rear == SIZE - 1)
+    {
+        printf("Full\n");
+    }
+    else
+    {
+        if (front == -1)
+            front = 0;
+
+        rear++;
+        item[rear] = value;
+
+        printf("Inserted = %d\n", value);
+    }
+}
+
+void dequeue()
+{
+    if (front == -1)
+    {
+        printf("Empty\n");
+    }
+    else
+    {
+        printf("Deleted = %d\n", item[front]);
+
+        front++;
+#include <stdio.h>
+
+#define SIZE 5
+
+int item[SIZE];
+int front = -1;
+int rear = -1;
+
+void enqueue(int value);
+void dequeue();
+void display();
+
+int main()
+{
+    enqueue(10);
+    enqueue(20);
+    enqueue(30);
+    enqueue(40);
+    enqueue(50);
+    enqueue(60);
+
+    display();
+
+    dequeue();
+    dequeue();
+
+    display();
+
+    return 0;
+}
+
+void enqueue(int value)
+{
+    if (rear == SIZE - 1)
+    {
+        printf("Full\n");
+    }
+    else
+    {
+        if (front == -1)
+            front = 0;
+
+        rear++;
+        item[rear] = value;
+
+        printf("Inserted = %d\n", value);
+    }
+}
+
+void dequeue()
+{
+    if (front == -1)
+    {
+        printf("Empty\n");
+    }
+    else
+    {
+        printf("Deleted = %d\n", item[front]);
+
+        front++;
+
+        if (front > rear)
+        {
+            front = rear = -1;
+        }
+    }
+}
+
+void display()
+{
+    int i;
+
+    if (rear == -1)
+    {
+        printf("Empty\n");
+    }
+    else
+    {
+        printf("Elements: ");
+
+        for (i = front; i <= rear; i++)
+        {
+            printf("%d ", item[i]);
+        }
+
+        printf("\n");
+    }
+}
+
+        if (front > re…
