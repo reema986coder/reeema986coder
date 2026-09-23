@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-// Function declaration
+
 long long factorial(int n);
 
 int main() {
@@ -10,7 +10,7 @@ int main() {
     printf("Enter a positive integer: ");
     scanf("%d", &num);
 
-    // Handling negative input context
+    
     if (num < 0) {
         printf("Factorial of a negative number doesn't exist.\n");
     } else {
@@ -21,9 +21,9 @@ int main() {
     return 0;
 }
 
-// Recursive function definition
+
 long long factorial(int n) {
-    // Base case: factorial of 0 or 1 is 1
+   
     if (n == 0 || n == 1) {
         return 1;
     }
